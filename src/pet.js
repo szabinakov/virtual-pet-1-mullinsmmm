@@ -26,15 +26,9 @@ Pet.prototype.growUp = function() {
       if(this.hunger >= 5){
         console.log('Feed me NOW!');
       }
-      if(this.hunger <= 4){
-        console.log('mmmmm');
-      }
 
       if(this.fitness <= 4){
         console.log('walk me NOW!');
-      }
-      if(this.fitness >= 8){
-        console.log('that was fun!');
       }
 
       if(this.age >= 28){
