@@ -33,23 +33,46 @@ Pet.prototype.feed = function() {
     }
  };
 
- Pet.prototype.checkUpWalk = function() {
-    if ((this.fitness - 3) <= Min_Fitness) {
-        return 'I need a walk!';
-        };
- };
+//  Pet.prototype.checkUpWalk = function() {
+//     if ((this.fitness - 3) <= Min_Fitness) {
+//         return 'I need a walk!';
+//         };
+//  };
 
- Pet.prototype.checkUpHunger = function() {
-    if ((this.hunger) >= Max_Hunger) {
-        return 'Im hungry!';
-        };
- };
+//  Pet.prototype.checkUpHunger = function() {
+//     if ((this.hunger) >= Max_Hunger) {
+//         return 'Im hungry!';
+//         };
+//  };
 
- Pet.prototype.checkUpBoth = function() {
-    if ((this.hunger) >= Max_Hunger &&  (this.fitness - 3) <= Min_Fitness) {
-        return 'Im hungry AND I need a walk!';
-    };
- };
+//  Pet.prototype.checkUpBoth = function() {
+//     if ((this.hunger) >= Max_Hunger &&  (this.fitness - 3) <= Min_Fitness) {
+//         return 'Im hungry AND I need a walk!';
+//     };
+//  };
+
+//  Pet.prototype.checkUpFine = function() {
+//     if (this.hunger <= Max_Hunger && this.hunger >= Min_Hunger + 1 
+//         && this.fitness >= Min_Fitness + 1) {
+//         return 'Im fine!';
+//     }
+// };
+
+Pet.prototype.checkUp = function() {
+    if (this.fitness <= 3 && this.hunger >= 5) {
+        return "Im hungry AND I need a walk!";
+    } else if (this.fitness <= 3) {
+        return "I need a walk!";
+    } else if (this.hunger >= 5) {
+        return "Im hungry!";
+    } else {
+        return "Im fine!";
+    }
+}
+
+
+ 
+
 
 const fido = new Pet('Fido');
 const rex = new Pet('Rex');

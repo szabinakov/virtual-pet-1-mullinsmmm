@@ -74,34 +74,39 @@ describe('constructor', () => {
         });
     });
 
-    describe('checkUpWalk', () => {
+    describe('checkUp', () => {
         it('returns "I need a walk!" if fitness is 3 or less', () => {
             const pet = new Pet('fido');
 
             pet.fitness = 3;
 
-            expect(pet.checkUpWalk()).toBe('I need a walk!');
+            expect(pet.checkUp()).toBe('I need a walk!');
         });
-    });
 
-    describe('checkUpHunger', () => {
         it('returns "Im hungry!" if fitness is 5 or more', () => {
             const pet = new Pet('fido');
 
             pet.hunger = 5;
 
-            expect(pet.checkUpHunger()).toBe('Im hungry!');
+            expect(pet.checkUp()).toBe('Im hungry!');
         });    
-    });
 
-    describe('checkUpBoth', () => {
         it('returns "Im hungry AND I need a walk!" if hunger is 5 and fitness is 3', () => {
             const pet = new Pet('Fido');
     
             pet.hunger = 5;
             pet.fitness = 3;
     
-            expect(pet.checkUpBoth()).toBe('Im hungry AND I need a walk!');
+            expect(pet.checkUp()).toBe('Im hungry AND I need a walk!');
+        });
+
+        it('returns "Im fine!" if hunger is above 5 and fitness is above 3', () => {
+            const pet = new Pet('Fido');
+    
+            pet.hunger = 4;
+            pet.fitness = 10;
+    
+            expect(pet.checkUp()).toBe('Im fine!');
         });
     });
 
