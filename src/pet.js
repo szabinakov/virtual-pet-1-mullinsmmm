@@ -1,8 +1,11 @@
+const Max_Fitness = 10;
+const Years = 0;
+
 function Pet(name) {
     this.name = name;
-    this.age = 0;
+    this.age = Years;
     this.hunger = 0;
-    this.fitness = 10;
+    this.fitness = Max_Fitness;
 };
 
 Pet.prototype.growUp = function() {
@@ -11,6 +14,13 @@ Pet.prototype.growUp = function() {
   this.fitness -= 3;
 };
 
+Pet.prototype.walk = function() {
+    if ((this.fitness + 4) <= Max_Fitness ) {
+      this.fitness += 4;
+    } else {
+      this.fitness = Max_Fitness;
+    }
+  }
 
 const fido = new Pet('Fido');
 const rex = new Pet('Rex');
