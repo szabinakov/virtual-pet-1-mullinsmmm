@@ -23,6 +23,12 @@ Pet.prototype.growUp = function() {
   this.age += 1;
   this.hunger += 5;
   this.fitness -= 3;
+      if(this.hunger >= 5){
+        console.log('Feed me NOW!');
+      }
+      if(this.fitness <= 4){
+        console.log('walk me NOW!');
+      }
 };
 
 Pet.prototype.walk = function() {
